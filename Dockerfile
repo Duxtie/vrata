@@ -1,4 +1,4 @@
-FROM dusterio/ubuntu-php7:latest
+FROM dusterio/ubuntu-php7.2:latest
 
 # Install memcached & xdebug extensions
 # The latter is only necessary for test coverage, it will be disabled later on
@@ -23,8 +23,6 @@ ADD tests/ /home/app/tests
 ADD phpunit.xml /home/app/
 ADD ci/start.sh /
 ADD ci/logs-logentries.sh /root/
-ADD ci/apm-appoptics.sh /root/
-ADD ci/appoptics.so /root/
 
 EXPOSE 80
 
